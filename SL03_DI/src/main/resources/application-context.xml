@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- RecordImple record = new RecordImple(); -->
+	<bean id="record" class="org.doit.ik.di.RecordImple"/>
+	
+	<!-- RecordViewImple rvi = new RecordViewImple(); -->
+	<bean id="rvi" class="org.doit.ik.di.RecordViewImple">
+		<!-- [setter DI] -->
+		<!-- <property name="record" ref="record"></property> -->
+		<property name="record">
+			<ref bean="record" />
+		</property>
+	</bean>
+	
+	<!-- [생성자 DI]
+	<bean id="rvi" class="org.doit.ik.di.RecordViewImple">
+		<constructor-arg ref="record"/>
+		
+		<constructor-arg>
+			<ref bean="record"/>
+		</constructor-arg>
+	</bean> 
+	-->
+</beans>

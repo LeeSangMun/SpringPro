@@ -1,0 +1,40 @@
+customer 폴더
+	ㄴ upload 폴더 생성
+
+1. p438
+
+2. p442 업로드한 파일 접근하는 방법
+	1) MultipartFile 인터페이스 사용
+	2) @RequestParam 애노테이션을 사용하는 방법 
+	3) MultiHttpServletRequest를 이용하는 방법
+	4) *** 커맨드 객체를 통한 업로드 파일 접근 ***
+		NoticeVO notice == 제목, 내용, 첨부파일
+		public String noticeReg(Notice notice) throws Exception {}
+		
+		NoticeVO.java
+		private CommonsMultipartFile file; // 필드 추가
+		// getter, setter 추가
+	
+	5) 컨트롤러 메서드 수정
+		CustomerController.java
+		noticeReg(){}
+		
+3. 공지사항 삭제 수정
+
+	공지사항 상세보기 noticeDetail.jsp
+	[삭제]버튼 클릭하면
+	첨부된 파일 유무 -> 첨부파일 삭제.
+
+	
+4. 공지사항 수정
+	1) 첨부파일 0 -> 첨부파일 X		// 원래 있던 첨부파일 삭제
+	2) 첨부파일 X -> 첨부파일 O		// 첨부된 파일 저장
+	3) 첨부파일 O -> 첨부파일 O		// 원래 있던 첨부파일 삭제 후 첨부된 파일 저장
+	
+	
+	
+	
+	
+	
+	
+	

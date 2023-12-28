@@ -1,0 +1,125 @@
+[REST 방식과 Ajax를 이용하는 댓글처리]
+1. 하나의 게시글 보면
+	한 줄 댓글
+	한 줄 댓글
+	한 줄 댓글
+	한 줄 댓글
+	
+2. REST
+	1) REST(Representational State Transfer)
+		- 로이 필딩(Roy Fielding)의 2000년 박사학위 논문에서 소개
+		- "네트워크 아키텍처 원리"의 모음
+		- "네트워크 아키텍처 원리" ?
+		- 자원을 정의하고 자원에 대한 주소를 지정하는 방법
+		
+	2) RESTful이란 ? 
+		- REST 원리를 따르는 시스템
+	
+3. 모바일 시대 변화
+	[웹]					앱, 웹+앱
+	[앱]		송/수신		순수한 XML, JSON 데이터
+
+4. URL<URI REST
+	- 하나의 URI는 하나의 고유한 자원(Resourece)를 대표하도록
+		설계된다는 개념의 전송 방법(방식)
+		
+5. 스프링 REST 방식으로 데이터를 처리하는 어노테이션을 제공.
+	1) @RestController : Controller + Rest 방식으로 처리
+	2) @RequestBody    : JSON 데이터를 -> 클래스 객체 변환(바인딩)
+	3) @ResponseBody   : JSP와 같은 뷰로 전달 X, 데이터 자체를 전달
+	4) @PathVariable   : URL 주소 속에 파라미터값을 추출해서 사용.
+	5) @CrossOrigin    : Ajax의 크로스 도메인 문제를 해결해 주는 어노테이션
+	
+6. 전송방식 
+	1) POST		: CREATE(insert) + /members/new 회원등록
+	2) GET		: READ(select)   + /members/{id} 회원조회
+	3) PUT		: UPDATE(update) + /members/{id} + body(json데이터) 회원수정
+	4) DELETE	: DELETE(delete) + /members/{id} 회원삭제
+
+7. pom.xml 
+	1) jackson-databind : JSON 데이터를 처리
+	<dependency>
+    	<groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>2.9.5</version>
+     </dependency>
+
+	2) jackson-dataformat-xml : XML 데이터를 처리
+     <dependency>
+        <groupId>com.fasterxml.jackson.dataformat</groupId>
+        <artifactId>jackson-dataformat-xml</artifactId>
+     	<version>2.9.5</version>
+     </dependency>
+
+	3) gson : java 객체를 JSON 문자열로 변환
+	<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+	<dependency>
+	    <groupId>com.google.code.gson</groupId>
+	    <artifactId>gson</artifactId>
+	    <version>2.8.2</version>
+	</dependency>
+	
+8. 예제
+	SampleController
+	
+-------------------------------------------------------------------------------------
+
+9. Ajax를 이용해서 댓글 처리
+
+CREATE TABLE tbl_reply (
+    rno NUMBER(10) -- 댓글번호
+    , bno NUMBER(10) NOT NULL -- 게시글번호
+    , reply VARCHAR2(1000) NOT NULL
+    , replyer VARCHAR2(50) NOT NULL
+    , replyDate DATE DEFAULT SYSDATE
+    , updateDate DATE DEFAULT SYSDATE
+);
+
+CREATE SEQUENCE seq_reply;
+
+ATER TABLE tbl_reply
+ADD CONSTRAINT pk_reply_rno PRIMARY KEY(rno);
+
+ALTER TABLE tbl_reply
+ADD CONSTRAINT fk_reply_bno FOREIGN KEY(bno) REFERENCES tbl_board(bno);
+
+10. domain 패키지
+	ㄴ ReplyVO.java
+
+11. ReplyMapper.java 추가 + 구현
+	ReplyMapper.xml  추가 + 구현
+	
+12.서비스 영역 + Controller 처리
+	org.doit.ik.service 패키지.
+		ㄴ ReplyService.java 인터페이스
+		ㄴ ReplyServiceImpl.java 클래스
+		
+13. web.xml 
+	시큐리티 관련 필터 주석처리
+	
+14. ReplyController.java + Ajax(REST 방식)
+	작업 : 		URL 		: HTTP전송방식
+	
+	등록 	/replies/new		POST 
+	조회 	/replies/:rno		GET 
+	삭제 	/replies/:rno		DELETE
+	수정 	/replies/:rno		PUT or PATCH
+	
+	페이징 처리된 
+	페이지 	/replies/pages/:bno/:page		GET
+	
+15.  get.jsp 페이지 + 댓글 기능 구현
+	1) reply.js 파일 추가
+
+
+
+
+
+
+
+
+
+
+
+
+

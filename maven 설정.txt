@@ -1,0 +1,40 @@
+maven
+
+변수 이름 : M2_HOME
+변수 값   : C:\apache-maven-3.9.5
+
+Path
+%M2_HOME%\bin
+
+C:\mvnSpring 폴더 생성
+
+mvn archetype:generate -DgroupId=com.newlecture -DartifactId=javaprj -DarchetypeArtifactId=maven-archetype-quickstart
+
+
+C:\mvnSpring>cd C:\mvnSpring\javaprj
+
+C:\mvnSpring\javaprj>mvn compile
+
+C:\mvnSpring\javaprj>mvn test
+
+C:\mvnSpring\javaprj>mvn package 		.jar 파일 생성
+
+
+C:\mvnSpring\javaprj>mvn install 		로컬저장소 등록
+
+C:\Users\계정명\.m2\repository 폴더 (로컬 저장소)
+	com
+	 ㄴ newlecture 폴더
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+.1
+	empno : [7369] [ID 중복 체크]
+	ename : []
+
+2. HomeController.java
+3. Home.jsp 코딩 수정
+
+4. domain 패키지
+	ㄴ EmpVO.java
+	
+5. MemberMapper.java 인터페이스 
+6. MemberMapper.xml 매퍼XML파일

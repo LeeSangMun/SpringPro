@@ -1,0 +1,71 @@
+1. 프로젝트 생성
+
+2. 스프링 타일즈(tiles)
+	ㄴ 페이지의 모듈화(집중화)
+	ㄴ 공통적인 부분(헤더, 풋터, 사이드 메뉴 등등) -> 참조
+	
+3. webapp 폴더 
+	ㄴ w3ss_layout_flexbox.jsp
+	ㄴ resources 폴더
+		ㄴ w3ss  폴더
+			ㄴ css 폴더
+				ㄴ flexbox.css
+				
+4. http://tiles.apache.org
+	pom.xml 3.0.8 타이즐 모듈 4개 추가 설정
+	
+	<!-- 7. Tiles -->
+      	 <dependency>
+           <groupId>org.apache.tiles</groupId>
+           <artifactId>tiles-extras</artifactId>
+           <version>${org.apache.tiles-version}</version>
+         </dependency>
+         <dependency>
+            <groupId>org.apache.tiles</groupId>
+            <artifactId>tiles-core</artifactId>
+            <version>${org.apache.tiles-version}</version>
+          </dependency>  
+          <dependency>
+            <groupId>org.apache.tiles</groupId>
+            <artifactId>tiles-servlet</artifactId>
+            <version>${org.apache.tiles-version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.tiles</groupId>
+            <artifactId>tiles-jsp</artifactId>
+            <version>${org.apache.tiles-version}</version>
+          </dependency>
+	
+5. 페이지 모듈화
+	views 폴더
+		ㄴ layout 폴더 추가
+			ㄴ header.jsp
+			ㄴ footer.jsp
+			ㄴ template.jsp
+			
+		ㄴ city 폴더 추가
+			ㄴ london.jsp
+			ㄴ paris.jsp
+			ㄴ seoul.jsp
+			ㄴ layout 폴더 추가
+				ㄴ nav.jsp
+				ㄴ template.jsp
+				
+6. WEB-INF
+	ㄴ tiles
+		ㄴ tiles.xml 추가
+		
+7. root-context.xml DB 연동 관련 빈 객체 등록
+	security-context.xml 시큐리티(보안) 빈 객체 등록
+	servlet-context.xml
+	
+			
+	
+	
+	
+	
+	
+	
+	
+	
+	

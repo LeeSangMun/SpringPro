@@ -1,0 +1,65 @@
+1. pom.xml 설정
+
+2. servlet-context.xml 빈 등록 확인
+
+3. WEB-INF/tiles/tiles.xml
+
+4. 페이지 모듈화(집중화)
+	webapp 폴더
+		ㄴ joinus 폴더 추가
+			ㄴ inc 폴더 추가
+				ㄴ aside.jsp
+				ㄴ visual.jsp
+				ㄴ layout.jsp
+	
+		ㄴ customer 폴더 추가
+			ㄴ inc 폴더 추가
+				ㄴ aside.jsp
+				ㄴ visual.jsp
+				ㄴ layout.jsp
+	
+		ㄴ inc 폴더 추가
+			ㄴ header.jsp
+			ㄴ footer.jsp
+			ㄴ layout.jsp
+			
+5. notice.jsp
+	1) header --> header.jsp
+	2) footer --> footer.jsp
+	
+6. jogin.jsp
+
+7. CustomerController.java
+		ㄴ return "customer.noticeXXX";
+
+	JoinController.java
+		ㄴ return "joinus.login";
+	
+	HomeController.java
+		ㄴ return "home.index";
+		
+8. 모든 jsp 파일들은 직접 호출할 수 없도록
+	WEB-INF
+		ㄴ views 폴더
+		
+9. tiles.xml
+
+[css 깨짐 문제 원인 및 해결] 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

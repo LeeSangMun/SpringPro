@@ -1,0 +1,63 @@
+p507
+
+1. root-context.xml (DB연동)
+	1) transactionManager 등록 확인...
+	
+2. 트랜잭션 처리
+	1) 게시글*(공지사항) 글쓰기
+	2) 작성자의 포인트 1증가
+	
+3. 포인트 컬럼 추가 - member 테이블 X
+4. 제약조건 추가
+	- 제목이 똑같으면 유일성 제약조건
+	- 포인트 3 이상이면 체크 제약조건
+	
+	ALTER TABLE member
+	ADD (point number(10) default(0));
+	
+	ALTER TABLE notices
+	ADD CONSTRAINT ck_notices_title UNIQUE(title);
+	
+	ALTER TABLE member
+	ADD CONSTRAINT ck_notices_point CHECK (point < 3);
+	
+	// 트랜잭션 처리를 테스트 하기 위해 point 칼럼 추가
+	private int point;
+	
+5. 
+6. 
+7. hong 계정 추가
+   mun 계정 추가
+   
+8. 게시글 작성 + 작성자 포인트 1증가 메서드 추가
+
+9. CustomerController 수정
+
+10. 테스트 
+	TEST-1 쓰기  kenik point = 1
+	TEST-2 쓰기  kenik point = 2
+	TEST-3 쓰기  kenik point = 3 체크제약조건 point < 3
+
+11. 트랜잭션 처리
+	1) 확인
+	root-context.xml
+	<bean id="transactionManager">
+
+	2) NoticeDaoImpl.java
+	
+	3) [2]
+	Test-4 쓰기 kenik point = 2
+	Test-5 쓰기 kenik point = 3 체크제약조건 point < 3 때문에 안들어가야함
+	
+12. p513 TransactionTemplate을 이용한 트랜잭션 처리
+	1) TransactionTemplate 빈 등록
+	
+	2) NotiveDaoImpl
+	
+	3) 테스트
+	Test-5 kenik point = 2
+	Test-6 kenik point = 3 체크제약조건 point < 3 때문에 안들어가야함
+
+
+	
+	

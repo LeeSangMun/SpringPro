@@ -1,0 +1,97 @@
+1. org.doit.ik.domain 패키지 추가
+2. org.doit.ik.controller 패키지 추가
+3. org.doit.ik.persistence 패키지 추가
+4. org.doit.ik.service 패키지 추가
+
+5. 
+CREATE TABLE NOTICES
+(
+	"SEQ" VARCHAR2(10 BYTE), -- 글번호
+	"TITLE" VARCHAR2(200 BYTE), -- 제목
+	"WRITER" VARCHAR2(50 BYTE), -- 작성자
+	"CONTENT" VARCHAR2(4000 BYTE), 
+	"REGDATE" TIMESTAMP (6), 
+	"HIT" NUMBER, 
+	"FILESRC" VARCHAR2(500 BYTE)
+);
+
+DROP TABLE "MEMBER";
+
+CREATE TABLE "MEMBER"
+(	
+    "ID" VARCHAR2(50 BYTE), 
+    "PWD" VARCHAR2(50 BYTE), 
+    "NAME" VARCHAR2(50 BYTE), 
+    "GENDER" VARCHAR2(10 BYTE), 
+    "BIRTH" VARCHAR2(10 BYTE), 
+    "IS_LUNAR" VARCHAR2(10 BYTE), 
+    "CPHONE" VARCHAR2(15 BYTE), 
+    "EMAIL" VARCHAR2(200 BYTE), 
+    "HABIT" VARCHAR2(200 BYTE), 
+    "REGDATE" DATE
+);
+
+
+6. NoticeVO.java
+   MemberVO.java
+   NoticeDao.java
+   MemberDao.java
+   모두 수정
+   
+7. WebContent 폴더 -> src/main/webapp 폴더에 이동
+	ㄴ css
+		customer.css 공지사항(Notices) css파일
+		joinus.css   회원(Member)     css파일
+		
+	ㄴ customer 폴더(공지사항)
+		notice.css			
+		
+		notice.jsp			공지사항목록 페이지
+		noticeDetail.jsp	공지사항상세보기 페이지
+		noticeEdit.jsp		공지사항수정 페이지
+		noticeReg.jsp		공지사항쓰기 페이지
+	
+	ㄴ images
+	
+	ㄴ joinus 폴더 (회원)
+		join.css		회원가입 css 파일
+		logon.css		로그인 css 파일
+		
+		login.jsp 로그인 페이지
+		join.jsp 회원가입 페이지
+	
+	ㄴ js
+	
+		index.css 
+		index.jsp 메인페이지
+		
+8. web.xml 
+	url-pattern      *.htm 으로 수정
+	
+	
+9. 컨트롤러 메서드 구현 X
+	JSP CommandHandler.java
+		process 추상메서드
+		
+		ListHandler implements CommandHandler
+		@Override
+		process {}
+		
+	- NoticeController.java 추가
+	- servlet-context.xml
+	
+10. noticeDetail.htm?seq=${dto.seq} 요청 처리 작업.
+	
+
+
+
+
+
+
+
+
+
+
+
+
+

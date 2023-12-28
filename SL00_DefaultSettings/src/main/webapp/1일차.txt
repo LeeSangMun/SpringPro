@@ -1,0 +1,11 @@
+이클립스 버전 : 21-09 (4.21.0)
+
+sts 설치 
+	projects -> spring Tools 4 ->  Spring Tool Suite 3 wiki(맨 밑)
+	-> Spring Tool Suite 3.9.18
+		full distribution on Eclipse 4.21
+		https://download.springsource.com/release/STS/3.9.18.RELEASE/dist/e4.21/spring-tool-suite-3.9.18.RELEASE-e4.21.0-win32-x86_64.zip
+
+sts 설정
+	룸복
+	도메인명 org.doit.ik

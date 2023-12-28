@@ -1,0 +1,12 @@
+/board/list?현재페이지=2&한페이지출력게시글수=10&검색어=T&검색어=홍길동
+
+1. Criteria.java
+	pageDTO.java
+2. BoardMapper.xml 수정
+	2개 추가
+3. BoardMapper.java
+	2개 추가
+4. BoardService.java
+	BoardServiceImpl.java
+	/board/list 요청 페이징 처리 list.jsp 응답 수정.~
+	/board.list?pageNum=3&amount=10

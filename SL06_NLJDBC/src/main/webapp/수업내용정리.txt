@@ -1,0 +1,22 @@
+p474 Chapter 11. 데이터베이스 연동 지원과 JDBC 지원
+( 스프링 JDBC )
+
+	1. DataSource 설정 방법  root-context.xml
+		1) pom.xml
+		
+		2) root-context.xml
+		
+	2. JdbcTemplate 클래스 사용 + 스프링
+		SELECT : query(), queryForList(), queryForObject()
+		INSERT, UPDATE, DELETE : update()
+	
+	<!-- p486 JdbcTemplate -->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+    	<property name="dataSource" ref="dataSource"></property>
+    </bean>
+    
+    <context:component-scan base-package="org.doit.ik" />
+    @Component
+    @Repository		+ DAO
+    @Controller		+ 컨트롤러
+    @Service		+ 서비스

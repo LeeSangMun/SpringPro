@@ -1,0 +1,49 @@
+1. 컴포넌트 스캔 수정...
+2. 
+	공지사항 목록 		NoticeController.java
+	공지사항 상세보기 	NoticeDetailController.java
+	공지사항 수정		
+	공지사항 삭제		
+	
+3. 컨트롤러 메서드(목록, 상세보기, 수정, 삭제)
+	예) BoardController.java
+		ㄴ list()
+		ㄴ write()
+		
+	CustomerController.java
+		ㄴ 컨트롤러메서드 구현.
+		ㄴ 컨트롤러메서드 구현.
+				:
+				
+4. 공지사항 쓰기(작성)
+	1) notice.jsp 페이지에서 글쓰기 버튼 클릭
+	2) /customer/noticeReg.htm 요청 -> CustomerController 컨트롤러메서드 추가
+		a 링크 + GET 방식 요청        -> noticeReg.jsp 페이지 응답...
+		
+	3) [저장] 버튼 클릭
+	/customer/noticeReg.htm 요청 + POST 방식
+	-> CustomerController.컨트롤러메서드 추가..
+	
+5. 공지사항 수정
+	1) noticeDetail.jsp -> [수정버튼] 확인
+	<a class="btn-edit button" href="noticeEdit.htm?seq=${notice.seq}">수정</a>
+	
+	2) CustomerController.컨트롤러메서드 추가 -> noticeEdit.jsp 페이지 응답...
+							?seq=1 Notice
+	3) noticeEdit.jsp의 [저장하기] 버튼 클릭~~ > 수정 작업 완료. 목록 이동
+	
+6. 공지 사항 삭제
+	1) noticeDetail.jsp -> [삭제버튼] 확인.
+	2) CustomerController.컨트롤러메서드 추가 -> 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

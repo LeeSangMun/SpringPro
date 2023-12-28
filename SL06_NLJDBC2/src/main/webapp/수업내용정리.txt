@@ -1,0 +1,15 @@
+1. namedParameterJdbcTemplate 객체 사용하는 프로젝트 예제
+	1) root-context.xml
+	
+2. org.doit.ik.persistence 패키지 -- DAO
+	MemberDao.java 인터페이스
+	ㄴ MemberDaoImpl.java 클래스
+	NoticeDao.java 인터페이스
+	ㄴ NoticeDaoImpl.java 클래스
+	
+3. index.jsp -> *.htm 요청
+	HomeController.java 수정
+	
+4. org.doit.ik.controller 패키지 안에
+	회원가입, 로그인 요청 처리하는 컨트롤러
+	JoinController.java 추가
